@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/buildJobs" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-all:2.0.7" level="project" />
+    <orderEntry type="module-library">
+      <library name="org.jenkins-ci.plugins:job-dsl-core:1.28" type="repository">
+        <properties maven-id="org.jenkins-ci.plugins:job-dsl-core:1.28" />
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/plugins/job-dsl-core/1.28/job-dsl-core-1.28.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.8/commons-codec-1.8.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/ivy/ivy/2.2.0/ivy-2.2.0.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy-all/1.8.6/groovy-all-1.8.6.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/jvnet/hudson/xstream/1.4.4-jenkins-3/xstream-1.4.4-jenkins-3.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/14.0.1/guava-14.0.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/xmlunit/xmlunit/1.4/xmlunit-1.4.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/version-number/1.1/version-number-1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/plugins/job-dsl-core/1.28/job-dsl-core-1.28-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/plugins/job-dsl-core/1.28/job-dsl-core-1.28-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
