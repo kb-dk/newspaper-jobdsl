@@ -1,6 +1,12 @@
-import common.NewspaperUtilities
+package buildJobs
 
-job = NewspaperUtilities.commonJob()
+import buildJobs.common.NewspaperUtilities
+import javaposse.jobdsl.dsl.Job
+import javaposse.jobdsl.dsl.JobType
+
+
+Job job = job(type: JobType.Maven) {}
+NewspaperUtilities.addCommonSteps(job);
 
 job.with {
     name 'newspaper-batch-event-framework'
@@ -13,4 +19,5 @@ job.with {
             branch('master')
         }
     }
-}
+};
+job;

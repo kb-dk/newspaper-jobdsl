@@ -1,20 +1,16 @@
-package common
+package buildJobs.common
 
 import javaposse.jobdsl.dsl.Job
-import javaposse.jobdsl.dsl.JobType
-
 
 public class NewspaperUtilities {
-    static def commonJob(){
-        def job = job(type: JobType.Maven) {}
-        addCommonSteps(job)
-    }
     static def addCommonSteps(Job job) {
         job.with {
             triggers {
                 snapshotDependencies(true)
                 githubPush()
+
             }
+            label("Newspaper-Component-Test")
             jdk('Java7')
             concurrentBuild false
             blockOnUpstreamProjects()
@@ -47,5 +43,6 @@ public class NewspaperUtilities {
                 mailer('', false, true)
             }
         }
+
     }
 }
