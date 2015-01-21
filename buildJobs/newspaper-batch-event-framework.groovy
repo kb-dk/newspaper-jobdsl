@@ -1,7 +1,7 @@
 job(type: Maven) {
     name 'newspaper-batch-event-framework-2'
     description 'The general autonomous component library'
-    concurrentBuild true
+    concurrentBuild false
     scm {
         git {
             remote {
@@ -18,7 +18,7 @@ job(type: Maven) {
 
     preBuildSteps {
         shell("echo \"Getting the integration test config from Stash\"\n" +
-                "cd \"$WORKSPACE\"\n" +
+                "cd \"\$WORKSPACE\"\n" +
                 "mkdir -p \"build\"\n" +
                 "cd build\n" +
                 "if [ -d \"devel-config\" ]; then\n" +
@@ -28,7 +28,7 @@ job(type: Maven) {
                 "  git clone ssh://git@sbprojects.statsbiblioteket.dk:7999/avis/devel-config.git\n" +
                 "fi")
         shell("echo \"Getting the sample batch from Stash\"\n" +
-                "cd \"$WORKSPACE\"\n" +
+                "cd \"\$WORKSPACE\"\n" +
                 "mkdir -p \"build\"\n" +
                 "cd build\n" +
                 "if [ -d \"testdata\" ]; then\n" +
