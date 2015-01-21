@@ -15,16 +15,15 @@ job(type: Maven) {
         githubPush()
     }
     jdk('java7')
-    maven {
-        mavenInstallation('maven3')
-        mavenOpts('-Pnewspaper')
-        mavenOpts('-PintegrationTests')
-        mavenOpts('-PtestDataTests')
-        mavenOpts('-PstandAloneTests')
-        mavenOpts('-PexternalTests')
-        goals('clean')
-        goals('install')
-    }
+
+    mavenInstallation('maven3')
+    mavenOpts('-Pnewspaper')
+    mavenOpts('-PintegrationTests')
+    mavenOpts('-PtestDataTests')
+    mavenOpts('-PstandAloneTests')
+    mavenOpts('-PexternalTests')
+    goals('clean')
+    goals('install')
     publishers {
         mailer('', false, true)
     }
