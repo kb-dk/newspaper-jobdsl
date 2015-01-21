@@ -1,6 +1,5 @@
 package buildJobs
 
-import buildJobs.common.NewspaperUtilities
 import javaposse.jobdsl.dsl.Job
 import javaposse.jobdsl.dsl.JobType
 

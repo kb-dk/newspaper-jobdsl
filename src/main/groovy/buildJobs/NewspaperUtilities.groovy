@@ -1,8 +1,8 @@
-package buildJobs.common
+package buildJobs
 
 import javaposse.jobdsl.dsl.Job
 
-public class NewspaperUtilities {
+class NewspaperUtilities {
     static def addCommonSteps(Job job) {
         job.with {
             triggers {
