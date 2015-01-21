@@ -1,6 +1,8 @@
 import common.NewspaperUtilities
 
-job = job(type: Maven) {
+job = NewspaperUtilities.commonJob()
+
+job.with {
     name 'newspaper-batch-event-framework'
     description 'The general autonomous component library'
     scm {
@@ -12,4 +14,3 @@ job = job(type: Maven) {
         }
     }
 }
-NewspaperUtilities.addCommonSteps(job)
