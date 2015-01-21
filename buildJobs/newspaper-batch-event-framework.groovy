@@ -42,14 +42,8 @@ job(type: Maven) {
     postBuildSteps {
         shell("echo 'run after Maven'")
     }
-    mavenInstallation('maven3')
-    goals('clean')
-    goals('install')
-    goals('-Pnewspaper')
-    goals('-PintegrationTests')
-    goals('-PtestDataTests')
-    goals('-PstandAloneTests')
-    goals('-PexternalTests')
+    mavenInstallation('Maven3')
+    goals('clean deploy -U -PstandAloneTests,testDataTests,externalTests,integrationTests -Dintegration.test.newspaper.testdata=$WORKSPACE/build/testdata -Dintegration.test.newspaper.properties=$WORKSPACE/build/devel-config/integration.test.newspaper.properties')
     publishers {
         mailer('', false, true)
     }
