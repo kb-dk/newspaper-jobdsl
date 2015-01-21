@@ -7,8 +7,8 @@ job(type: Maven) {
             remote {
                 url('https://github.com/statsbiblioteket/newspaper-batch-event-framework')
             }
+            branch('master')
         }
-        branch('master')
     }
     triggers {
         snapshotDependencies(true)
