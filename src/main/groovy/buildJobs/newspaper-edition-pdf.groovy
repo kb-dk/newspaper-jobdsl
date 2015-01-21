@@ -9,6 +9,9 @@ NewspaperUtilities.addCommonSteps(job);
 
 job.with {
     name 'newspaper-edition-pdf'
+    triggers {
+        scm("H/5 * * * *")
+    }
     scm {
         git {
             remote {
