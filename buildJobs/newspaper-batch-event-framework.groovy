@@ -14,7 +14,7 @@ job(type: Maven) {
         snapshotDependencies(true)
         githubPush()
     }
-    jdk('java7')
+    jdk('Java7')
 
     preBuildSteps {
         shell("echo \"Getting the integration test config from Stash\"\n" +
@@ -43,13 +43,13 @@ job(type: Maven) {
         shell("echo 'run after Maven'")
     }
     mavenInstallation('maven3')
-    mavenOpts('-Pnewspaper')
-    mavenOpts('-PintegrationTests')
-    mavenOpts('-PtestDataTests')
-    mavenOpts('-PstandAloneTests')
-    mavenOpts('-PexternalTests')
     goals('clean')
     goals('install')
+    goals('-Pnewspaper')
+    goals('-PintegrationTests')
+    goals('-PtestDataTests')
+    goals('-PstandAloneTests')
+    goals('-PexternalTests')
     publishers {
         mailer('', false, true)
     }
