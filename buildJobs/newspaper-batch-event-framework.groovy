@@ -2,6 +2,9 @@ job(type: Maven) {
     name 'newspaper-batch-event-framework-2'
     description 'The general autonomous component library'
     concurrentBuild false
+    /*label(String labelStr)*/ /*Label which specifies which nodes this job can run on, e.g. 'X86&&Ubuntu'*/
+    /*disabled(Boolean shouldDisable)*/
+    blockOnUpstreamProjects()
     scm {
         git {
             remote {
@@ -44,6 +47,7 @@ job(type: Maven) {
     }
     mavenInstallation('Maven3')
     goals('clean deploy -U -PstandAloneTests,testDataTests,externalTests,integrationTests -Dintegration.test.newspaper.testdata=$WORKSPACE/build/testdata -Dintegration.test.newspaper.properties=$WORKSPACE/build/devel-config/integration.test.newspaper.properties')
+    mavenOpts("")
     publishers {
         mailer('', false, true)
     }
