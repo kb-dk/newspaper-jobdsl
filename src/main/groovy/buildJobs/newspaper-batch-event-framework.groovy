@@ -4,10 +4,7 @@ import javaposse.jobdsl.dsl.Job
 import javaposse.jobdsl.dsl.JobType
 
 
-Job job = job(type: JobType.Maven) { NewspaperUtilities.addCommonSteps(job);}
-
-
-job.with {
+NewspaperUtilities.addCommonSteps(job(type: JobType.Maven){
     name 'newspaper-batch-event-framework'
     description 'The general autonomous component library'
     scm {
@@ -18,5 +15,4 @@ job.with {
             branch('master')
         }
     }
-};
-job;
+} as Job)
