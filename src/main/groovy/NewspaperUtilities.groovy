@@ -10,6 +10,7 @@ class NewspaperUtilities {
                 githubPush()
 
             }
+            logRotator(daysToKeepInt = -1, numToKeepInt = 20, artifactDaysToKeepInt = -1, artifactNumToKeepInt = -1)
             label('Newspaper-Component-Test')
             jdk('Java7')
             concurrentBuild false
@@ -68,6 +69,8 @@ class NewspaperUtilities {
             jdk('Java7')
             label('Achernar_Newspaper')
             concurrentBuild(false)
+            logRotator(daysToKeepInt = -1, numToKeepInt = 20, artifactDaysToKeepInt = -1, artifactNumToKeepInt = -1)
+
         }
     }
 }
