@@ -4,14 +4,14 @@ view(type: ListView) {
     filterBuildQueue()
     filterExecutors()
     jobs {
-        project('avis-job-dsl')
-        project('Clean_Newspaper_System')
-        project('deploy_autonomous_components')
-        project('Reset-batch')
-        project('Newspaper-devel-config')
-        project('Newspaper-testdata')
-        project('newspaper_process_monitor')
-        project('newspaper_process_monitor_tests')
+        name('avis-job-dsl')
+        name('Clean_Newspaper_System')
+        name('deploy_autonomous_components')
+        name('Reset-batch')
+        name('Newspaper-devel-config')
+        name('Newspaper-testdata')
+        name('newspaper_process_monitor')
+        name('newspaper_process_monitor_tests')
     }
     columns {
         status()
