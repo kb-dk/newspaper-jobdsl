@@ -16,12 +16,14 @@ job.with {
                 'set +x\n' +
                 'ssh doms@achernar "source .bash_profile ; shopt -s huponexit; ~/7880-cibuild/sboi-summarise/bin/ingest_update.sh  && ~/7880-cibuild/sboi-summarise/bin/index_update.sh < /dev/null &> /dev/null"')
 
+    }
+    postBuildSteps{
         downstreamParameterized {
-            trigger('achernar-invoke-batch-trigger', 'SUCCESS'){
+            trigger('achernar-invoke-batch-trigger', 'SUCCESS',true){
             }
-            trigger('achernar-ingest-metadata', 'SUCCESS') {
+            trigger('achernar-ingest-metadata', 'SUCCESS',true) {
             }
-            trigger('achernar-ingest-data', 'SUCCESS') {
+            trigger('achernar-ingest-data', 'SUCCESS',true) {
             }
             trigger('achernar-check-structure', 'SUCCESS') {
             }
