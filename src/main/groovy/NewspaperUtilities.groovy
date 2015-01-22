@@ -10,9 +10,7 @@ class NewspaperUtilities {
                 githubPush()
 
             }
-            logRotator {
-                numToKeepInt = 20
-            }
+            logRotator(-1, 20, -1, -1)
             label('Newspaper-Component-Test')
             jdk('Java7')
             concurrentBuild false
@@ -71,9 +69,7 @@ class NewspaperUtilities {
             jdk('Java7')
             label('Achernar_Newspaper')
             concurrentBuild(false)
-            logRotator {
-                numToKeepInt = 20
-            }
+            logRotator(-1, 20, -1, -1)
         }
     }
 }
