@@ -1,4 +1,4 @@
-package buildJobs
+
 
 import javaposse.jobdsl.dsl.Job
 import javaposse.jobdsl.dsl.JobType
@@ -7,14 +7,13 @@ Job job = job(type: JobType.Maven) {}
 NewspaperUtilities.addCommonSteps(job);
 
 job.with {
-    name 'newspaper-doms-enricher'
+    name 'newspaper-roundtrip-approver'
     scm {
         git {
             remote {
-                url('https://github.com/statsbiblioteket/newspaper-doms-enricher')
+                url('https://github.com/statsbiblioteket/newspaper-roundtrip-approver')
             }
             branch('master')
         }
     }
-    goals("-Dlogback.configurationFile=\$WORKSPACE/build/devel-config/logback.xml")
 }

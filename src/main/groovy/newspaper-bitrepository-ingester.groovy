@@ -1,4 +1,4 @@
-package buildJobs
+
 
 import javaposse.jobdsl.dsl.Job
 import javaposse.jobdsl.dsl.JobType
@@ -7,11 +7,11 @@ Job job = job(type: JobType.Maven) {}
 NewspaperUtilities.addCommonSteps(job);
 
 job.with {
-    name 'newspaper-roundtrip-approver'
+    name 'newspaper-bitrepository-ingester'
     scm {
         git {
             remote {
-                url('https://github.com/statsbiblioteket/newspaper-roundtrip-approver')
+                url('https://github.com/statsbiblioteket/newspaper-bitrepository-ingester.git')
             }
             branch('master')
         }

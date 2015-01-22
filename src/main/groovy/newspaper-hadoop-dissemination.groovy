@@ -1,4 +1,4 @@
-package buildJobs
+
 
 import javaposse.jobdsl.dsl.Job
 import javaposse.jobdsl.dsl.JobType
