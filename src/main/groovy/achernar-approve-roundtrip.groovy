@@ -5,6 +5,6 @@ Job job = job(type: JobType.Freeform) {}
 NewspaperUtilities.addAchernar(job)
 
 job.with {
-    name 'achernar-approve-roundtrips'
+    name 'achernar-approve-roundtrip'
     }
 //TODO
