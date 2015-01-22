@@ -9,7 +9,7 @@ job.with {
     steps {
         shell('set +e;\n' +
                 'set +x;\n' +
-                'ssh newspapr@achernar "source .bash_profile ; shopt -s huponexit; mkdir ~/cibuild; cd ~/cibuild; newspaper-man ualQA-flagger-*/bin/pollAndWork.sh </dev/null"')
+                'ssh newspapr@achernar "source .bash_profile ; shopt -s huponexit; mkdir ~/cibuild; cd ~/cibuild; newspaper-manualQA-flagger-*/bin/pollAndWork.sh </dev/null"')
     }
 
 }
