@@ -1,5 +1,5 @@
 view(type: ListView) {
-    name('Achernar Newspaper components')
+    name('Newspaper Achernar components')
     description('All invokers for the Achernar newspaper system')
     filterBuildQueue()
     filterExecutors()
