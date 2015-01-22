@@ -5,7 +5,7 @@ Job job = job(type: JobType.Freeform) {}
 NewspaperUtilities.addAchernar(job)
 
 job.with {
-    name 'achernar-invke-batch-trigger'
+    name 'achernar-invoke-batch-trigger'
     steps {
         shell('set +e;\n' +
                 'set +x;\n' +
