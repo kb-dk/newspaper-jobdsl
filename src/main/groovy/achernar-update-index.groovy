@@ -17,12 +17,35 @@ job.with {
                 'ssh doms@achernar "source .bash_profile ; shopt -s huponexit; ~/7880-cibuild/sboi-summarise/bin/ingest_update.sh  && ~/7880-cibuild/sboi-summarise/bin/index_update.sh < /dev/null &> /dev/null"')
 
         downstreamParameterized {
-            trigger('achernar-invoke-batch-trigger, achernar-ingest-metadata, achernar-ingest-data, achernar-check-structure, achernar-generate-statistics, achernar-check-metadata, achernar-generate-histogram, achernar-generate-jpylyzer, achernar-generate-presentation, achernar-enrich-batch, achernar-generate-manualQA-flags, achernar-approve-roundtrip', 'SUCCESS'){
-                currentBuild()
+            trigger('achernar-invoke-batch-trigger', 'SUCCESS'){
             }
-            trigger('achernar-update-edition-records, achernar-update-title-records', 'SUCCESS') {
-                currentBuild()
+            trigger('achernar-ingest-metadata', 'SUCCESS') {
             }
+            trigger('achernar-ingest-data', 'SUCCESS') {
+            }
+            trigger('achernar-check-structure', 'SUCCESS') {
+            }
+            trigger('achernar-generate-statistics', 'SUCCESS') {
+            }
+            trigger('achernar-check-metadata', 'SUCCESS') {
+            }
+            trigger('achernar-generate-histogram', 'SUCCESS') {
+            }
+            trigger('achernar-generate-jpylyzer', 'SUCCESS') {
+            }
+            trigger('achernar-generate-presentation', 'SUCCESS') {
+            }
+            trigger('achernar-enrich-batch', 'SUCCESS') {
+            }
+            trigger('achernar-generate-manualQA-flags', 'SUCCESS') {
+            }
+            trigger('achernar-approve-roundtrip', 'SUCCESS') {
+            }
+            trigger('achernar-update-edition-records', 'SUCCESS') {
+            }
+            trigger('achernar-update-title-records', 'SUCCESS') {
+            }
+
 
         }
     }
