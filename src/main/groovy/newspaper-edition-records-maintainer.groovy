@@ -16,7 +16,7 @@ job.with {
             branch('master')
         }
     }
-    prebuildSteps{
+    preBuildSteps{
         shell("cd \"\$WORKSPACE\"\n" +
                 "mkdir -p \"build\"\n" +
                 "cd build\n" +
