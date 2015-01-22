@@ -68,7 +68,6 @@ class NewspaperUtilities {
             jdk('Java7')
             label('Achernar_Newspaper')
             concurrentBuild(false)
-            logRotator(numToKeepInt = 20)
         }
     }
 }
