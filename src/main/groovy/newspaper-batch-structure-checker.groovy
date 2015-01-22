@@ -5,11 +5,12 @@ Job job = job(type: JobType.Maven) {}
 NewspaperUtilities.addCommonSteps(job);
 
 job.with {
-    name 'newspaper-jpeg2k-histogrammer'
+    name 'newspaper-batch-structure-checker'
+    label('Python27')
     scm {
         git {
             remote {
-                url('https://github.com/statsbiblioteket/newspaper-jpeg2k-histogrammer')
+                url('https://github.com/statsbiblioteket/newspaper-batch-structure-checker')
             }
             branch('master')
         }

@@ -1,10 +1,10 @@
-
-
 import javaposse.jobdsl.dsl.Job
 import javaposse.jobdsl.dsl.JobType
 
+Job job = job(type: JobType.Maven) {}
+NewspaperUtilities.addCommonSteps(job);
 
-NewspaperUtilities.addCommonSteps(job(type: JobType.Maven) {
+job.with {
     name 'newspaper-edition-pdf'
     triggers {
         scm("H/5 * * * *")
@@ -18,9 +18,9 @@ NewspaperUtilities.addCommonSteps(job(type: JobType.Maven) {
         }
     }
     preBuildSteps {
-        shell("cd \"\$WORKSPACE\"\n" +
-                "mkdir -p \"build\"\n" +
-                "cd build\n" +
-                "cd testdata")
+        shell("cd \"\$WORKSPACE\";\n" +
+                "mkdir -p \"build\";\n" +
+                "cd build;\n" +
+                "cd testdata;")
     }
-} as Job)
+}

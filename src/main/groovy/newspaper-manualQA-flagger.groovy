@@ -1,5 +1,3 @@
-
-
 import javaposse.jobdsl.dsl.Job
 import javaposse.jobdsl.dsl.JobType
 

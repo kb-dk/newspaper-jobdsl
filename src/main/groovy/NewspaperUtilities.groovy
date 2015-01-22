@@ -10,7 +10,7 @@ class NewspaperUtilities {
                 githubPush()
 
             }
-            label("Newspaper-Component-Test")
+            label('Newspaper-Component-Test')
             jdk('Java7')
             concurrentBuild false
             blockOnUpstreamProjects()
