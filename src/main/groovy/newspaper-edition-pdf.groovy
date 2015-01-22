@@ -3,10 +3,8 @@
 import javaposse.jobdsl.dsl.Job
 import javaposse.jobdsl.dsl.JobType
 
-Job job = job(type: JobType.Maven) {}
-NewspaperUtilities.addCommonSteps(job);
 
-job.with {
+NewspaperUtilities.addCommonSteps(job(type: JobType.Maven) {
     name 'newspaper-edition-pdf'
     triggers {
         scm("H/5 * * * *")
@@ -25,4 +23,4 @@ job.with {
                 "cd build\n" +
                 "cd testdata")
     }
-}
+} as Job)
