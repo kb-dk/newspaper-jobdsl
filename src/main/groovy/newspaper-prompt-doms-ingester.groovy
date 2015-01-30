@@ -1,10 +1,10 @@
 import javaposse.jobdsl.dsl.Job
 import javaposse.jobdsl.dsl.JobType
 
-Job job = job(type: JobType.Maven) {}
-NewspaperUtilities.addCommonSteps(job);
+Job mavenJob = job(type: JobType.Maven) {}
+NewspaperUtilities.addCommonSteps(mavenJob);
 
-job.with {
+mavenJob.with {
     name 'newspaper-prompt-doms-ingester'
     scm {
         git {
@@ -14,4 +14,22 @@ job.with {
             branch('master')
         }
     }
+    postBuildSteps {
+        shell("ssh newspapr@achernar \"source .bash_profile ; ~/deploy-scripts/deploy-doms-ingester.sh")
+    }
+    blockOn("achernar-ingest-metadata")
+}
+
+
+Job achernarJob = job(type: JobType.Freeform) {}
+NewspaperUtilities.addAchernar(achernarJob)
+
+achernarJob.with {
+    name 'achernar-ingest-metadata'
+    steps {
+        shell('set +e;\n' +
+                'set +x;\n' +
+                'ssh newspapr@achernar "source .bash_profile ; shopt -s huponexit; mkdir ~/cibuild; cd ~/cibuild; newspaper-prompt-doms-ingester-*/bin/start_prompt_ingest_component.sh </dev/null"')
+    }
+    blockOn(mavenJob.name)
 }
